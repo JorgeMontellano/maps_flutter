@@ -11,7 +11,7 @@ class HomePageTemp extends StatelessWidget {
   }
 
 //Version 1 de listas
-  List<Widget> _crearItems() {
+/*   List<Widget> _crearItems() {
     List<Widget> lista = new List<Widget>();
     for (var opt in opciones) {
       final tempWidget = ListTile(
@@ -20,7 +20,7 @@ class HomePageTemp extends StatelessWidget {
       lista..add(tempWidget)..add(Divider());
     }
     return lista;
-  }
+  } */
 
 //version 2 de listas
   List<Widget> _crearItemsCorto() {
