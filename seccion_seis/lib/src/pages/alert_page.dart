@@ -32,6 +32,26 @@ void _mostrarAlert(BuildContext context) {
       barrierDismissible: true,
       builder: (context) {
         return AlertDialog(
-            title: Text('Titulo'), content: Text('El contenido'));
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          title: Text('Titulo'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text('Este es el contenido de una caja de alerta'),
+              FlutterLogo(size: 100.0)
+            ],
+          ),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('Cancelar'),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+            FlatButton(
+              child: Text('OK'),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+          ],
+        );
       });
 }
