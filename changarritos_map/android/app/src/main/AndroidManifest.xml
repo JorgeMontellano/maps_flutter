@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.changarritos_map">
+    package="com.example.changarritos_map" >
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
          In most cases you can leave this as-is, but you if you want to provide
@@ -8,6 +8,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="changarritos_map"
+
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
@@ -23,6 +24,10 @@
             <meta-data
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
+              />
+              <meta-data
+              android:name="com.google.android.geo.API_KEY"
+              android:value="AIzaSyCtitItHE9RudcvBzslo2TklxcFqpJNYIc"
               />
             <!-- Displays an Android View that continues showing the launch screen
                  Drawable until Flutter paints its first frame, then this splash
@@ -45,3 +50,4 @@
             android:value="2" />
     </application>
 </manifest>
+
