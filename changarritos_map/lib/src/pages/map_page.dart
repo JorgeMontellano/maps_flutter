@@ -17,7 +17,7 @@ class _MapPageState extends State<MapPage> {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text('eTuux Changarritos'),
+          title: Text('eTúux Changarritos'),
           backgroundColor: Colors.blue,
         ),
         body: GoogleMap(
