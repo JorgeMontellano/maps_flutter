@@ -8,7 +8,6 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="changarritos_map"
-
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
@@ -25,10 +24,8 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
-              <meta-data
-              android:name="com.google.android.geo.API_KEY"
-              android:value="AIzaSyCtitItHE9RudcvBzslo2TklxcFqpJNYIc"
-              />
+            <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyCtitItHE9RudcvBzslo2TklxcFqpJNYIc"/>
             <!-- Displays an Android View that continues showing the launch screen
                  Drawable until Flutter paints its first frame, then this splash
                  screen fades out. A splash screen is useful to avoid any visual
@@ -49,5 +46,7 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
 

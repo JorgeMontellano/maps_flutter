@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong/latlong.dart';
+import 'dart:async';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapPage extends StatefulWidget {
   @override
@@ -8,6 +8,9 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPageState extends State<MapPage> {
+  Completer<GoogleMapController> _controller = Completer();
+  // final CameraPosition _kGooglePlex =
+  // CameraPosition(target: LatLng(22.575645, -102.248015), zoom: 20.0);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,34 +20,13 @@ class _MapPageState extends State<MapPage> {
           title: Text('eTuux Changarritos'),
           backgroundColor: Colors.green[200],
         ),
-        body: new FlutterMap(
-          options: MapOptions(
-            center: LatLng(22.574980, -102.247576),
-            zoom: 15.0,
-          ),
-          layers: [
-            TileLayerOptions(
-                urlTemplate: 'https://api.tiles.mapbox.com/v4/'
-                    '{id}/{z}/{x}/{y}@2x.png?access_token={accessToken}',
-                additionalOptions: {
-                  'accessToken':
-                      'pk.eyJ1Ijoiam1vbnRlbGxhbm8iLCJhIjoiY2tjYXc4am41MXpndTJ4bzZlanRpNzBhciJ9.J44_QjsQboYA8EobUc4sVg',
-                  'id': 'mapbox.streets'
-                }),
-            MarkerLayerOptions(
-              markers: [
-                Marker(
-                    width: 120.0,
-                    height: 120.0,
-                    point: LatLng(22.575683, -102.247447),
-                    builder: (ctx) => Container(
-                            child: Icon(
-                          Icons.location_on,
-                          size: 50.0,
-                        ))),
-              ],
-            ),
-          ],
+        body: GoogleMap(
+          mapType: MapType.hybrid,
+          initialCameraPosition: CameraPosition(
+              target: LatLng(22.575645, -102.248015), zoom: 20.0),
+          onMapCreated: (GoogleMapController controller) {
+            _controller.complete(controller);
+          },
         ),
       ),
     );
