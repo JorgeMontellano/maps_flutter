@@ -21,14 +21,21 @@ class _MapPageState extends State<MapPage> {
           backgroundColor: Colors.green[200],
         ),
         body: GoogleMap(
-          mapType: MapType.hybrid,
+          mapType: MapType.normal,
           initialCameraPosition: CameraPosition(
               target: LatLng(22.575645, -102.248015), zoom: 20.0),
           onMapCreated: (GoogleMapController controller) {
             _controller.complete(controller);
           },
+          markers: {homeMarker},
         ),
       ),
     );
   }
+
+  Marker homeMarker = Marker(
+      markerId: MarkerId('home'),
+      position: LatLng(22.575994, -102.247360),
+      infoWindow: InfoWindow(title: 'Mi casa'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueCyan));
 }
