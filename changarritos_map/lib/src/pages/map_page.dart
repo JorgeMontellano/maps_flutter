@@ -18,12 +18,12 @@ class _MapPageState extends State<MapPage> {
         appBar: AppBar(
           centerTitle: true,
           title: Text('eTuux Changarritos'),
-          backgroundColor: Colors.green[200],
+          backgroundColor: Colors.blue,
         ),
         body: GoogleMap(
           mapType: MapType.normal,
           initialCameraPosition: CameraPosition(
-              target: LatLng(22.575645, -102.248015), zoom: 20.0),
+              target: LatLng(22.575645, -102.248015), zoom: 17.0),
           onMapCreated: (GoogleMapController controller) {
             _controller.complete(controller);
           },
@@ -36,6 +36,7 @@ class _MapPageState extends State<MapPage> {
   Marker homeMarker = Marker(
       markerId: MarkerId('home'),
       position: LatLng(22.575994, -102.247360),
-      infoWindow: InfoWindow(title: 'Mi casa'),
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueCyan));
+      infoWindow: InfoWindow(
+          title: 'Mi casa', snippet: 'Aqui se encuentra mi dulce hogar'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue));
 }
